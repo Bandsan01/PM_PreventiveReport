@@ -1,0 +1,150 @@
+<mvc:View controllerName="com.app.calendartableview.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.ui.table"
+	xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" 
+    xmlns:m="sap.m" height="100%">
+    	<m:Page
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<m:content>
+			<Table id="table_id"
+				rows="{prevData>/}" 
+				selectionMode="None"
+				showNoData="true"
+				visibleRowCountMode="Auto"
+				ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="title" text="Planning Calendar"/>
+						<m:ToolbarSpacer/>
+                <m:Label text="Plant" labelFor="stickyModeSelect" />
+				<m:Select change="onChange" items="{F4Data>/}">
+					<core:ListItem text="{F4Data>Plant}" key="{F4Data>Plant}" />
+				</m:Select>
+									<m:ToolbarSpacer/>
+									<m:Label text="Date Range" labelFor="stickyModeSelect" />
+					<m:DateRangeSelection width="250px"
+			value= "{
+				'type': 'sap.ui.model.type.DateInterval',
+				'formatOptions': {
+					'pattern': 'dd MMM yyyy'
+				},
+				'parts': [
+					{
+						'type': 'sap.ui.model.type.Date',
+						'path': 'view>/startDate'
+					},
+					{
+						'type': 'sap.ui.model.type.Date',
+						'path': 'view>/endDate'
+					}
+				]
+			}"
+			change="handleChange"/>
+			<m:Button icon="sap-icon://excel-attachment" press="onExport"/>
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+				<Column width="11rem">
+						<m:Label text="Maintenance Plan" />
+						<template>
+							<m:Text text="{prevData>Warpl}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Maintenance Plan Description " />
+						<template>
+							<m:Text text="{prevData>Maintplandesc}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Equipment No " />
+						<template>
+							<m:Text text="{prevData>Equnr}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Equipment Description " />
+						<template>
+							<m:Text text="{prevData>Equipmentdescription}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Specification" />
+						<template>
+							<m:Text text="{prevData>Groes}" wrapping="false" />
+						</template>
+					</Column>
+					
+					<Column width="11rem">
+						<m:Label text="Manufacturer" />
+						<template>
+								<m:Text text="{prevData>Herst}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Model Number" />
+						<template>
+								<m:Text text="{prevData>Typbz}" wrapping="false" />
+						</template>
+					</Column>
+					
+					<Column width="11rem">
+						<m:Label text="Functional Location" />
+						<template>
+								<m:Text text="{prevData>Tplnr}" wrapping="false" />
+						</template>
+					</Column>
+									<Column width="11rem">
+						<m:Label text="Equipment System Status " />
+						<template>
+							<m:Text text="{prevData>Equipsysat}" wrapping="false" />
+						</template>
+					 </Column>
+					 <Column width="11rem">
+						<m:Label text="Equipment User Status " />
+						<template>
+							<m:Text text="{prevData>EquipUstat}" wrapping="false" />
+						</template>
+					 </Column>
+					<Column width="11rem">
+						<m:Label text="Last Maintenance Date" />
+						<template>
+							<m:Text text="{prevData>Lastcaldate}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Maintenance Due Date" />
+						<template>
+							<m:Text text="{prevData>Nplda}" wrapping="false" />
+						</template>
+					</Column>
+					
+					<Column width="11rem">
+						<m:Label text="Maintenance Frequency" />
+						<template>
+								<m:Text text="{prevData>Frequency} {prevData>Zeieh}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Work Order Number" />
+						<template>
+								<m:Text text="{prevData>Laufn}" wrapping="false" />
+						</template>
+					</Column>
+					
+					<Column width="11rem">
+						<m:Label text="Work Order Status" />
+						<template>
+								<m:Text text="{prevData>Longdesc}" wrapping="false" />
+						</template>
+					</Column>
+				</columns>
+			
+			</Table>
+		</m:content>
+	</m:Page>
+    <!-- <Page id="page" title="{i18n>title}">
+        <content />
+    </Page> -->
+</mvc:View>
