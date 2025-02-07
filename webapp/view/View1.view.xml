@@ -129,7 +129,7 @@
 					<Column width="11rem">
 						<m:Label text="Work Order Number" />
 						<template>
-								<m:Text text="{prevData>Laufn}" wrapping="false" />
+								<m:Button text="{prevData>Laufn}" wrapping="false" press="onLinkPRPress"/>
 						</template>
 					</Column>
 					

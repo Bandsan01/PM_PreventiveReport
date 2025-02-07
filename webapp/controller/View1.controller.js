@@ -92,6 +92,22 @@ sap.ui.define([
                 this.selectedPlant = evt.oSource.getSelectedKey();
                 this.getdetails(this.firstday, this.lastday);
             },
+            //Navigate to Display Order App
+            onLinkPRPress : function(oEvent){
+			const workOrdrNum = this.getView().getModel("prevData").getProperty("Laufn", oEvent.getSource().getBindingContext("prevData"));
+			var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
+			if (sap.ushell && sap.ushell.Container && sap.ushell.Container.getService) {
+				oCrossAppNavigator.toExternal({
+					target: {
+						semanticObject: "ZSEM_PM_ODRDSPLY",
+						action: "display"
+					},
+					params: {
+						"OrderNo": workOrdrNum,
+					}
+				});
+			}
+		},
             onExport: function() {
                 var aCols, oSettings, oSheet;
                var data = this.getView().getModel("prevData").getData();
