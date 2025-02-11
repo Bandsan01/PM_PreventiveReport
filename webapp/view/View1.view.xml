@@ -18,9 +18,9 @@
 						<m:Title id="title" text="Planning Calendar"/>
 						<m:ToolbarSpacer/>
                 <m:Label text="Plant" labelFor="stickyModeSelect" />
-				<m:Select change="onChange" items="{F4Data>/}">
+				<m:ComboBox change="onChange" items="{F4Data>/}">
 					<core:ListItem text="{F4Data>Plant}" key="{F4Data>Plant}" />
-				</m:Select>
+				</m:ComboBox>
 									<m:ToolbarSpacer/>
 									<m:Label text="Date Range" labelFor="stickyModeSelect" />
 					<m:DateRangeSelection width="250px"

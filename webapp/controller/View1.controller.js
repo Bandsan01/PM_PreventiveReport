@@ -70,6 +70,7 @@ sap.ui.define([
                         for (var i = 0; i < oData.results.length; i++) {
                             oData.results[i].Nplda = dateFormat.format(oData.results[i].Nplda);
                             oData.results[i].Lastcaldate = dateFormat.format(oData.results[i].Lastcaldate);
+                            oData.results[i].freq = oData.results[i].Frequency.concat(" ", oData.results[i].Zeieh);
                         }
                         busyDialog.close();
                         that.calModel = new JSONModel([]);
@@ -206,7 +207,7 @@ sap.ui.define([
                 },
                 {
                 	label: "Maintenance Frequency",
-                	property: "Frequency",
+                	property: "freq",
                 	//type: EdmType.String,
                 	scale: 0
                 },
