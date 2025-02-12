@@ -15,7 +15,7 @@
 				ariaLabelledBy="title">
 				<extension>
 					<m:OverflowToolbar style="Clear">
-						<m:Title id="title" text="Planning Calendar"/>
+						<m:Title id="title" text="Preventative Maintainence Report"/>
 						<m:ToolbarSpacer/>
                 <m:Label text="Plant" labelFor="stickyModeSelect" />
 				<m:ComboBox change="onChange" items="{F4Data>/}">
@@ -52,6 +52,12 @@
 						</template>
 					</Column>
 					<Column width="11rem">
+						<m:Label text="Maintenance Item" />
+						<template>
+							<m:Text text="{prevData>Wapos}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="14rem">
 						<m:Label text="Maintenance Plan Description " />
 						<template>
 							<m:Text text="{prevData>Maintplandesc}" wrapping="false" />
@@ -95,7 +101,7 @@
 								<m:Text text="{prevData>Tplnr}" wrapping="false" />
 						</template>
 					</Column>
-									<Column width="11rem">
+									<Column width="14rem">
 						<m:Label text="Equipment System Status " />
 						<template>
 							<m:Text text="{prevData>Equipsysat}" wrapping="false" />
