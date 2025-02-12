@@ -31,7 +31,7 @@ sap.ui.define([
                 oModelF4.read(entity, {
                     method: "GET",
                     success: function (oData) {
-                        that.selectedPlant = oData.results[0].Plant;
+                        that.selectedPlant = "";
                         var f4Model = new JSONModel([]);
                         f4Model.setData(oData.results);
                         that.getView().setModel(f4Model, "F4Data");
@@ -137,8 +137,14 @@ sap.ui.define([
      
             _createColumnConfig: function () {
                 return [ {
-                	label: "Mantenance Plan Name",
+                	label: "Maintenance Plan",
                 	property: "Warpl",
+                	//type: EdmType.String,
+                	scale: 0
+                },
+                {
+                	label: "Maintenance Item",
+                	property: "Wapos",
                 	//type: EdmType.String,
                 	scale: 0
                 },
@@ -194,7 +200,7 @@ sap.ui.define([
                     scale: 0
                 }, 
                 {
-                    abel: "Last Maintenance Date",
+                    label: "Last Maintenance Date",
                     property: "Lastcaldate",
                     //type: EdmType.String,
                     scale: 0
