@@ -65,11 +65,12 @@ sap.ui.define([
                     "async": true,
                     "success": function (oData) {
                         const dateFormat = sap.ui.core.format.DateFormat.getDateInstance({
-                            pattern: "d MMM y"
+                            pattern: "yyyy.MM.dd"
                         });
                         for (var i = 0; i < oData.results.length; i++) {
                             oData.results[i].Nplda = dateFormat.format(oData.results[i].Nplda);
                             oData.results[i].Lastcaldate = dateFormat.format(oData.results[i].Lastcaldate);
+                             oData.results[i].TecoDate = dateFormat.format(oData.results[i].TecoDate);
                             oData.results[i].freq = oData.results[i].Frequency.concat(" ", oData.results[i].Zeieh);
                         }
                         busyDialog.close();
@@ -154,6 +155,12 @@ sap.ui.define([
                 	//type: EdmType.String,
                 	scale: 0
                 },
+                {
+                	label: "Plant",
+                	property: "Iwerk",
+                	//type: EdmType.String,
+                	scale: 0
+                },
                     {
                     label: "Equipment Number",
                     property: "Equnr",
@@ -228,11 +235,17 @@ sap.ui.define([
                 	property: "Longdesc",
                 	//type: EdmType.String,
                 	scale: 0
+                },
+                {
+                	label: "Work Order TECO",
+                	property: "TecoDate",
+                	//type: EdmType.String,
+                	scale: 0
                 }
                
             ];
             }
      
     
-        });l
+        });
     });
