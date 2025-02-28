@@ -21,6 +21,6 @@ builder:
           name: ZUI_MAINT_RPT
           description: Preventive maintance report
           package: ZPM_FIORI
-          transport: DGWK900989
+          transport: DGWK901033
         exclude:
           - /test/

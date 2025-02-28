@@ -45,104 +45,116 @@
 					</m:OverflowToolbar>
 				</extension>
 				<columns>
-				<Column width="11rem">
+				<Column width="11rem" sortProperty="Wapos" filterProperty="Wapos">
 						<m:Label text="Maintenance Plan" />
 						<template>
 							<m:Text text="{prevData>Warpl}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Wapos" filterProperty="Wapos">
 						<m:Label text="Maintenance Item" />
 						<template>
 							<m:Text text="{prevData>Wapos}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="14rem">
+					<Column width="14rem" sortProperty="Maintplandesc" filterProperty="Maintplandesc">
 						<m:Label text="Maintenance Plan Description " />
 						<template>
 							<m:Text text="{prevData>Maintplandesc}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="11rem">
+					<Column width="10rem" sortProperty="Iwerk" filterProperty="Iwerk">
+						<m:Label text="Plant" />
+						<template>
+							<m:Label text="{prevData>Iwerk}"/>
+						</template>
+					</Column>
+					<Column width="11rem" sortProperty="Equnr" filterProperty="Equnr">
 						<m:Label text="Equipment No " />
 						<template>
 							<m:Text text="{prevData>Equnr}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Equipmentdescription" filterProperty="Equipmentdescription">
 						<m:Label text="Equipment Description " />
 						<template>
 							<m:Text text="{prevData>Equipmentdescription}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Groes" filterProperty="Groes">
 						<m:Label text="Specification" />
 						<template>
 							<m:Text text="{prevData>Groes}" wrapping="false" />
 						</template>
 					</Column>
 					
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Herst" filterProperty="Herst">
 						<m:Label text="Manufacturer" />
 						<template>
 								<m:Text text="{prevData>Herst}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Typbz" filterProperty="Typbz">
 						<m:Label text="Model Number" />
 						<template>
 								<m:Text text="{prevData>Typbz}" wrapping="false" />
 						</template>
 					</Column>
 					
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Tplnr" filterProperty="Tplnr">
 						<m:Label text="Functional Location" />
 						<template>
 								<m:Text text="{prevData>Tplnr}" wrapping="false" />
 						</template>
 					</Column>
-									<Column width="14rem">
+									<Column width="14rem" sortProperty="Equipsysat" filterProperty="Equipsysat">
 						<m:Label text="Equipment System Status " />
 						<template>
 							<m:Text text="{prevData>Equipsysat}" wrapping="false" />
 						</template>
 					 </Column>
-					 <Column width="11rem">
+					 <Column width="11rem" sortProperty="EquipUstat" filterProperty="EquipUstat">
 						<m:Label text="Equipment User Status " />
 						<template>
 							<m:Text text="{prevData>EquipUstat}" wrapping="false" />
 						</template>
 					 </Column>
-					<Column width="11rem">
-						<m:Label text="Last Maintenance Date" />
+					<Column width="16rem" sortProperty="Lastcaldate" filterProperty="Lastcaldate">
+						<m:Label text="Last Maintenance Date(YYYY.MM.DD)" />
 						<template>
 							<m:Text text="{prevData>Lastcaldate}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="11rem">
-						<m:Label text="Maintenance Due Date" />
+					<Column width="16rem" sortProperty="Nplda" filterProperty="Nplda">
+						<m:Label text="Maintenance Due Date(YYYY.MM.DD)" />
 						<template>
 							<m:Text text="{prevData>Nplda}" wrapping="false" />
 						</template>
 					</Column>
 					
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Frequency" filterProperty="Frequency">
 						<m:Label text="Maintenance Frequency" />
 						<template>
 								<m:Text text="{prevData>Frequency} {prevData>Zeieh}" wrapping="false" />
 						</template>
 					</Column>
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Laufn" filterProperty="Laufn">
 						<m:Label text="Work Order Number" />
 						<template>
-								<m:Button text="{prevData>Laufn}" wrapping="false" press="onLinkPRPress"/>
+								<m:Link text="{prevData>Laufn}" wrapping="false" press="onLinkPRPress"/>
 						</template>
 					</Column>
 					
-					<Column width="11rem">
+					<Column width="11rem" sortProperty="Longdesc" filterProperty="Longdesc">
 						<m:Label text="Work Order Status" />
 						<template>
 								<m:Text text="{prevData>Longdesc}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="16rem" sortProperty="TecoDate" filterProperty="TecoDate">
+						<m:Label text="Work Order TECO (YYYY.MM.DD)" />
+						<template>
+								<m:Text text="{prevData>TecoDate}" wrapping="false" />
 						</template>
 					</Column>
 				</columns>
